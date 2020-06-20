@@ -4,16 +4,7 @@ const timeout = 3800;
 var size, ownId, interval;
 
 // Tell the driver which serial port to use
-const driver = new Driver('/dev/tty.usbmodem1411101', {
-  'timeouts': {
-    /** how long to wait for an ACK */
-    'ack': timeout,
-    /** not sure */
-    'byte': timeout,
-    /** How much time a node gets to process a request */
-    'report': timeout
-  }
-});
+const driver = new Driver('/dev/tty.usbmodem1411101');
 
 // Should process exit terminate driver
 process.on('SIGINT', () => {
